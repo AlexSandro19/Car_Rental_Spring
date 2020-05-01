@@ -44,6 +44,10 @@ tr:nth-child(even){
     background-color: aquamarine;
 }
 
+.btn {
+    background-color: azure;
+}
+
 .label{
     display: inline-block;
     width: 150px;
