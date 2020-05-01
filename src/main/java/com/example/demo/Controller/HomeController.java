@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
 
@@ -26,6 +28,17 @@ public class HomeController {
         List<Customer> customerList = customerService.fetchAll();
         model.addAttribute("customers", customerList);
         return "home/customers";
+    }
+
+    @GetMapping("/add_customer")
+    public String add_customer(){
+        return "/home/add_customer";
+    }
+
+    @PostMapping("/add_customer")
+    public String add_customer(@ModelAttribute Customer customer){
+        customerService.addCustomer(customer);
+        return "redirect:/";
     }
 
 }

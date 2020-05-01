@@ -26,7 +26,6 @@
 
             </tr>
         </thead>
-
         <tbody>
             <tr th:each="customer: ${customers}">
                 <td th:text="${customer.customer_id}"/>
@@ -44,8 +43,11 @@
 
         </tbody>
 
-
     </table>
-
+        <div>
+            <a href="/add_customer">
+                <button class="btn-create" id="btn-create">Add New Customer</button>
+            </a>
+        </div>
     </body>
 </html>

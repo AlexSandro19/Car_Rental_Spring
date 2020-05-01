@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Add new customer</title>
+    <link rel="stylesheet" type="text/css" href="customers.css">
+</head>
+<body>
+    <h1>Add New Customer</h1>
+
+    <form action="/add_customer" method="post">
+        <br>
+        <label>Enter First Name</label>
+        <input type="text" name="first_name">
+        <br>
+        <label>Enter Last Name</label>
+        <input type="text" name="last_name">
+        <br>
+        <label>Enter Street Address</label>
+        <input type="text" name="st_address">
+        <br>
+        <label>Enter ZIP Code</label>
+        <input type="number" name="zip">
+        <br>
+        <label>Enter Mobile Phone</label>
+        <input type="number" name="mobile_phone">
+        <br>
+        <label>Enter Additional Phone(Optional)</label>
+        <input type="number" name="addit_phone">
+        <br>
+        <label>Enter Email</label>
+        <input type="email" name="email">
+        <br>
+        <label>Enter Driver License Number</label>
+        <input type="number" name="driver_license">
+        <br>
+        <label>Enter Driver Since Date</label>
+        <input type="date" name="driver_since">
+        <br>
+        <input style="background-color: aquamarine" type="submit" value="Add Customer">
+    </form>
+
+
+</body>
+</html>

@@ -1,6 +1,6 @@
 table{
     border-collapse: collapse;
-    width: 40%;
+    width: auto;
 }
 
 th{
@@ -42,4 +42,22 @@ tr:nth-child(even){
 
 #btn-update{
     background-color: aquamarine;
+}
+
+.label{
+    display: inline-block;
+    width: 150px;
+    text-align: left;
+    margin-right:30px;
+    margin-top:100px;
+}
+
+.fieldset{
+    border:none;
+    padding:15px;
+    width:500px;
+    margin:0px auto;
+}
+.div{
+    line-height: 30px;
 }
