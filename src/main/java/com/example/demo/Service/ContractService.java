@@ -30,6 +30,6 @@ public class ContractService {
     }
 
     public Contract updateContract(int id, Contract contract){
-        return ;
+        return null;
     }
 }
