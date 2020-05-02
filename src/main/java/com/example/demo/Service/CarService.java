@@ -1,6 +1,7 @@
 package com.example.demo.Service;
 
 import com.example.demo.Model.Car;
+import com.example.demo.Model.CarComplete;
 import com.example.demo.Repository.CarRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,7 +22,7 @@ public class CarService {
         return carRepo.addCar(car);
     }
 
-    public Car findCarById(int id){
+    public CarComplete findCarById(int id){
         return carRepo.findCarById(id);
     }
 

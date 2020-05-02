@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Cars Menu</h1>
+<table>
+    <thead>
+        <th>Id</th>
+        <th>Brand Id</th>
+        <th>Registration Number</th>
+        <th>Registration Date</th>
+        <th>Mileage</th>
+        <th>Car Type</th>
+        <th>Buttons</th>
+    </thead>
+    <tbody>
+        <tr th:each="car: ${cars}">
+            <td th:text="${car.car_id}"/>
+            <td th:text="${car.brandModel_id}"/>
+            <td th:text="${car.reg_num}"/>
+            <td th:text="${car.reg_date}"/>
+            <td th:text="${car.mileage}"/>
+            <td th:text="${car.carType_id}"/>
+            <td>
+                <a th:href="@{'/viewCar/' + ${car.car_id}}">
+                    <button id="btn_viewCar">View Info</button>
+                </a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+</body>
+</html>
