@@ -29,14 +29,20 @@ public class CustomerRepo {
     }
 
     public Customer findCustomerById(int id){
-        return null;
+        String sql = "SELECT * FROM customers WHERE customer_id = ?";
+        RowMapper<Customer> rowMapper = new BeanPropertyRowMapper<>(Customer.class);
+        Customer c = template.queryForObject(sql, rowMapper, id);
+        return c;
     }
 
     public Boolean deleteCustomer(int id){
-        return null;
+        String sql = "DELETE FROM customers WHERE customer_id = ?";
+        return template.update(sql, id) < 0;
     }
 
-    public Customer updateCustomer(int id, Customer customer){
+    public Customer updateCustomer(int id, Customer c){
+        String sql = "UPDATE customers SET first_name = ?, last_name = ?, st_address = ?, zip = ?, mobile_phone = ?, addit_phone = ?, email = ?, driver_license = ?, driver_since = ? WHERE customer_id = ?";
+        template.update(sql, c.getFirst_name(), c.getLast_name(), c.getSt_address(), c.getZip(), c.getMobile_phone(), c.getAddit_phone(), c.getEmail(), c.getDriver_license(), c.getDriver_since(), c.getCustomer_id());
         return null;
     }
 }

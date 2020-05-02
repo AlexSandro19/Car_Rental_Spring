@@ -38,6 +38,19 @@
                 <td th:text="${customer.email}"/>
                 <td th:text="${customer.driver_license}"/>
                 <td th:text="${customer.driver_since}"/>
+                <td>
+                    <a th:href="@{'/delete/'+${customer.customer_id}}">
+                        <button class="btn-delete", id="btn-delete">Delete Customer</button>
+
+                    </a>
+                </td>
+                <td>
+                    <a th:href="@{'/update/'+${customer.customer_id}}">
+                        <button class="btn-update", id="btn-update">Update Customer</button>
+
+                    </a>
+
+                </td>
 
             </tr>
 
