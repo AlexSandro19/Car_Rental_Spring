@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Edit Car Information</h1>
+    <form action="/updateCar" method="post">
+        <label>Car ID: </label>
+        <input type="text" name="car_id" th:value="${car.car_id}" readonly><br />
+        <label>Enter Brand ID: </label>
+        <input type="text" name="brandModel_id" th:value="${car.brandModel_id}"><br />
+        <label>Enter Registration Number (XXXXXXX - 7 chars): </label>
+        <input type="text" name="reg_num" th:value="${car.reg_num}"><br />
+        <label>Enter Registration Date (YYYY-MM-DD): </label>
+        <input type="text" name="reg_date" th:value="${car.reg_date}"><br />
+        <label>Enter Mileage: </label>
+        <input type="text" name="mileage" th:value="${car.mileage}"><br />
+        <label>Enter Car Type</label>
+        <input type="text" name="carType_id" th:value="${car.carType_id}"><br />
+        <br />
+        <input type="submit" value="Save changes">
+    </form>
+</body>
+</html>

@@ -18,6 +18,8 @@ import java.util.List;
 @Controller
 public class HomeController {
 
+    // ---- CARS ----
+
     @Autowired
     CarService carService;
 
@@ -25,7 +27,15 @@ public class HomeController {
     public String index(){
         return "home/index";
     }
-    
+
+    @GetMapping("/createCar")
+    public String createCar(){return "home/createCar"; }
+
+    @PostMapping("/createCar")
+    public String createCar(@ModelAttribute Car car){
+        carService.addCar(car);
+        return "redirect:/carMenu";
+    }
 
     @GetMapping("/carMenu")
     public String carMenu(Model model){
@@ -36,10 +46,36 @@ public class HomeController {
 
     @GetMapping("/viewCar/{car_id}")
     public String viewCar(@PathVariable("car_id") int car_id, Model model){
-        model.addAttribute("carComplete", carService.findCarById(car_id));
+        model.addAttribute("carComplete", carService.findCarCompleteInfoById(car_id));
         return "home/viewCar";
     }
-    
+
+    @GetMapping("/deleteCar/{car_id}")
+    public String deleteCar(@PathVariable("car_id") int car_id, Model model){
+         boolean deleted = carService.deleteCar(car_id);
+         if (deleted){
+             return "redirect:/carMenu";
+         }else{
+             return "redirect:/carMenu";
+         }
+
+    }
+
+    @GetMapping("/updateCar/{car_id}")
+    public String updateCar(@PathVariable("car_id") int car_id, Model model){
+        model.addAttribute("car", carService.findCarById(car_id));
+        return"home/updateCar";
+    }
+
+    @PostMapping("/updateCar")
+    public String updateCar(@ModelAttribute Car car){
+        carService.updateCar(car.getCar_id(),  car);
+        return "redirect:/carMenu";
+    }
+
+
+    // ---- CUSTOMERS ----
+
     @Autowired
     CustomerService customerService;
 
@@ -58,7 +94,28 @@ public class HomeController {
     @PostMapping("/add_customer")
     public String add_customer(@ModelAttribute Customer customer){
         customerService.addCustomer(customer);
-        return "redirect:/";
+        return "redirect:customers";
     }
+
+    @GetMapping("/delete/{id}")
+    public String delete(@PathVariable("id") int id){
+        boolean deleted = customerService.deleteCustomer(id);
+        if (deleted) {
+            return "redirect:/customers";
+        }
+        return "redirect:/customers";
+    }
+
+    @GetMapping("/update/{id}")
+    public String update(@PathVariable("id") int id, Model model) {
+        model.addAttribute("customer", customerService.findCustomerById(id));
+        return "/home/update_customer";
+    }
+    @PostMapping("/updateCustomer")
+    public String updateCustomer(@ModelAttribute Customer customer){
+        customerService.updateCustomer(customer.getCustomer_id(), customer);
+        return "redirect:/customers";
+    }
+
 
 }

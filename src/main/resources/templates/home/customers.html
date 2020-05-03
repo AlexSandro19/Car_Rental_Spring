@@ -1,53 +1,66 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
-    <head>
-        <meta charset="UTF-8">
-        <title>Customers Menu</title>
-        <link rel="stylesheet" type="text/css" href="customers.css">
-    </head>
-    <body>
+<head>
+    <meta charset="UTF-8">
+    <title>Customers Menu</title>
+    <link rel="stylesheet" type="text/css" href="customers.css">
+</head>
+<body>
 
-        <p>WIP</p>
+<p>WIP</p>
 
-        <h1>Customer List</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Address</th>
-                <th>ZIP</th>
-                <th>Mobile Phone</th>
-                <th>Additional Phone</th>
-                <th>Email</th>
-                <th>Driver License</th>
-                <th>Driver Since</th>
+<h1>Customer List</h1>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Address</th>
+        <th>ZIP</th>
+        <th>Mobile Phone</th>
+        <th>Additional Phone</th>
+        <th>Email</th>
+        <th>Driver License</th>
+        <th>Driver Since</th>
 
-            </tr>
-        </thead>
-        <tbody>
-            <tr th:each="customer: ${customers}">
-                <td th:text="${customer.customer_id}"/>
-                <td th:text="${customer.first_name}"/>
-                <td th:text="${customer.last_name}"/>
-                <td th:text="${customer.st_address}"/>
-                <td th:text="${customer.zip}"/>
-                <td th:text="${customer.mobile_phone}"/>
-                <td th:text="${customer.addit_phone}"/>
-                <td th:text="${customer.email}"/>
-                <td th:text="${customer.driver_license}"/>
-                <td th:text="${customer.driver_since}"/>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="customer: ${customers}">
+        <td th:text="${customer.customer_id}"/>
+        <td th:text="${customer.first_name}"/>
+        <td th:text="${customer.last_name}"/>
+        <td th:text="${customer.st_address}"/>
+        <td th:text="${customer.zip}"/>
+        <td th:text="${customer.mobile_phone}"/>
+        <td th:text="${customer.addit_phone}"/>
+        <td th:text="${customer.email}"/>
+        <td th:text="${customer.driver_license}"/>
+        <td th:text="${customer.driver_since}"/>
+        <td>
+            <a th:href="@{'/delete/'+${customer.customer_id}}">
+                <button class="btn-delete", id="btn-delete">Delete Customer</button>
 
-            </tr>
-
-        </tbody>
-
-    </table>
-        <div>
-            <a href="/add_customer">
-                <button class="btn-create" id="btn-create">Add New Customer</button>
             </a>
-        </div>
-    </body>
+        </td>
+        <td>
+            <a th:href="@{'/update/'+${customer.customer_id}}">
+                <button class="btn-update", id="btn-update">Update Customer</button>
+
+            </a>
+
+        </td>
+
+    </tr>
+
+    </tbody>
+
+</table>
+<div>
+    <a href="/add_customer">
+        <button class="btn-create" id="btn-create">Add New Customer</button>
+    </a>
+</div>
+</body>
 </html>
