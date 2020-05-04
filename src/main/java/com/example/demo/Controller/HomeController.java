@@ -129,5 +129,35 @@ public class HomeController {
         return "home/contracts";
     }
 
+    @GetMapping("/add_contract")
+    public String add_contract(){
+        return "/home/add_contract";
+    }
+
+    @PostMapping("/add_contract")
+    public String add_contract(@ModelAttribute Contract contract){
+        contractService.addContract(contract);
+        return "redirect:contracts";
+    }
+
+    @GetMapping("/deleteContract/{id}")
+    public String deleteContract(@PathVariable("id") int id){
+        boolean deleted = contractService.deleteContract(id);
+        if (deleted) {
+            return "redirect:/contracts";
+        }
+        return "redirect:/contracts";
+    }
+
+    @GetMapping("/updateContract/{id}")
+    public String updateContract(@PathVariable("id") int id, Model model) {
+        model.addAttribute("contract", contractService.findContractById(id));
+        return "/home/update_contract";
+    }
+    @PostMapping("/updateContract")
+    public String updateContract(@ModelAttribute Contract contract){
+        contractService.updateContract(contract.getContract_id(), contract);
+        return "redirect:contracts";
+    }
 
 }

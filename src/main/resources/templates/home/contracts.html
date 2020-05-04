@@ -33,7 +33,19 @@
         <td th:text="${contract.end_date}"/>
         <td th:text="${contract.max_km}"/>
         <td th:text="${contract.start_km}"/>
+        <td>
+            <a th:href="@{'/deleteContract/'+${contract.contract_id}}">
+                <button class="btn-delete", id="btn-delete">Delete Contract</button>
+            </a>
+        </td>
+
+        <td>
+            <a th:href="@{'/updateContract/'+${contract.contract_id}}">
+                <button class="btn-update", id="btn-update">Update Contract</button>
+            </a>
+        </td>
     </tr>
+
 
 
 
@@ -41,6 +53,9 @@
 
 </table>
 <div>
+    <a href="/add_contract">
+        <button class="btn-create" id="btn-create">Add New Contract</button>
+    </a>
 
     <a href="/">
         <button class="btn_back">Go Back</button>

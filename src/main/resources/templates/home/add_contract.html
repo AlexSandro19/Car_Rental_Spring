@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Add new Contract</title>
+    <link rel="stylesheet" type="text/css" href="customers.css">
+</head>
+<body>
+<h1>Add New Contract</h1>
+
+<form action="/add_contract" method="post">
+    <div>
+        <label>Enter Renter ID</label><br>
+        <input type="text" name="renter_id" required>
+    </div>
+    <div>
+        <label>Enter Car ID</label><br>
+        <input type="text" name="car_id" required>
+    </div>
+    <div>
+        <label>Enter Start Date</label><br>
+        <input type="date" name="start_date" required>
+    </div>
+    <div>
+        <label>Enter End Date</label><br>
+        <input type="date" name="end_date" required>
+    </div>
+    <div>
+        <label>Enter Max km</label><br>
+        <input type="number" name="max_km" required>
+    </div>
+    <div>
+        <label>Enter Start km</label><br>
+        <input type="number" name="start_km" required>
+    </div>
+    <br>
+    <div>
+        <input style="background-color: azure" type="submit" value="Add Contract">
+    </div>
+</form>
+
+
+</body>
+</html>

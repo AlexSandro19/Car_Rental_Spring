@@ -9,7 +9,6 @@
 <h1>Update Customer</h1>
 
 <form action="/updateCustomer" method="post">
-    <input type="text" name="customer_id" th:value="${customer.customer_id}"  placeholder="Customer ID" required>
     <input type="text" name="first_name" th:value="${customer.first_name}"  placeholder="First Name" required>
     <input type="text" name="last_name" th:value="${customer.last_name}"  placeholder="Last Name" required>
     <input type="text" name="st_address" th:value="${customer.st_address}"  placeholder="St Address">

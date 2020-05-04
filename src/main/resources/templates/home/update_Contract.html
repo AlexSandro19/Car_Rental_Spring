@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Contract</title>
+    <link rel="stylesheet" type="text/css" href="customers.css">
+</head>
+<body>
+<h1>Update Contract</h1>
+
+<form action="/updateContract" method="post">
+    <input type="text" name="renter_id" th:value="${contract.renter_id}"  placeholder="Renter ID" required>
+    <input type="text" name="car_id" th:value="${contract.car_id}"  placeholder="Car ID" required>
+    <input type="date" name="start_date" th:value="${contract.start_date}"  placeholder="Start Date" required>
+    <input type="date" name="end_date" th:value="${contract.end_date}"  placeholder="End Date" required>
+    <input type="number" name="max_km" th:value="${contract.max_km}"  placeholder="Max km" required>
+    <input type="number" name="start_km" th:value="${contract.start_km}" placeholder="Start km" required>
+
+    <br>
+    <input type="submit" style="background-color: aquamarine" value="Save Changes">
+    <a href="/contracts" style="background-color: aliceblue">Revert<a/>
+</form>
+</body>
+</html>
