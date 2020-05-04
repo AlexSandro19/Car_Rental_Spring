@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Customers Menu</title>
-    <link rel="stylesheet" type="text/css" href="customers.css">
+    <link rel="stylesheet" type="text/css" href="/customers.css">
 </head>
 <body>
 
@@ -23,7 +23,7 @@
         <th>Email</th>
         <th>Driver License</th>
         <th>Driver Since</th>
-
+        <th colspan="2">Buttons</th>
             </tr>
         </thead>
         <tbody>
@@ -41,17 +41,13 @@
                 <td>
                     <a th:href="@{'/delete/'+${customer.customer_id}}">
                         <button class="btn-delete", id="btn-delete">Delete Customer</button>
-
                     </a>
                 </td>
                 <td>
                     <a th:href="@{'/update/'+${customer.customer_id}}">
                         <button class="btn-update", id="btn-update">Update Customer</button>
-
                     </a>
-
                 </td>
-
             </tr>
 
             </a>
