@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Contract Menu</title>
+    <link rel="stylesheet" type="text/css" href="customers.css">
+</head>
+<body>
+
+<p>WIP</p>
+
+<h1>Contract List</h1>
+<table>
+    <thead>
+    <tr>
+        <th>Contract ID</th>
+        <th>Renter ID</th>
+        <th>Car ID</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+        <th>Max km</th>
+        <th>Start km</th>
+
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="contract: ${contracts}">
+        <td th:text="${contract.contract_id}"/>
+        <td th:text="${contract.renter_id}"/>
+        <td th:text="${contract.car_id}"/>
+        <td th:text="${contract.start_date}"/>
+        <td th:text="${contract.end_date}"/>
+        <td th:text="${contract.max_km}"/>
+        <td th:text="${contract.start_km}"/>
+    </tr>
+
+
+
+    </tbody>
+
+</table>
+<div>
+
+    <a href="/">
+        <button class="btn_back">Go Back</button>
+    </a>
+</div>
+</body>
+</html>
