@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/html">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <link rel="stylesheet" type="text/css" href="customers.css">
     <meta charset="UTF-8">
@@ -7,8 +7,9 @@
 </head>
 <body>
     <h1>Cars Menu</h1>
-<br/>
-    <div>
+    <a href="/createCar">
+        <button id="btn-createCar">Add Car</button>
+    </a>
     <table>
         <thead>
             <th>Id</th>
@@ -41,18 +42,9 @@
             </tr>
         </tbody>
     </table>
-</div>
-    <br/>
-    <div class="addCar">
-        <a href="/createCar">
-        <button id="btn-createCar">Add Car</button>
-        </a>
-    </div>
-    <br/>
-    <div class="goBack">
+    <br />
     <a href="/">
         <button class="btn_back">Go Back</button>
     </a>
-    </div>
 </body>
 </html>
