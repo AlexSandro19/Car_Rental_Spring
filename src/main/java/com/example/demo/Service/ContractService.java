@@ -1,6 +1,7 @@
 package com.example.demo.Service;
 
 import com.example.demo.Model.Contract;
+import com.example.demo.Model.ContractComplete;
 import com.example.demo.Repository.ContractRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,6 +24,10 @@ public class ContractService {
 
     public Contract findContractById(int id){
         return contractRepo.findContractById(id);
+    }
+
+    public ContractComplete findContractCompleteInfoById(int id){
+        return contractRepo.findContractCompleteInfoById(id);
     }
 
     public Boolean deleteContract(int id){

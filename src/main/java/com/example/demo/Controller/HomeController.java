@@ -118,7 +118,7 @@ public class HomeController {
         return "redirect:customers";
     }
 
-    //CONTRACTS
+    // ---- CONTRACTS ----
     @Autowired
     ContractService contractService;
 
@@ -127,6 +127,12 @@ public class HomeController {
         List<Contract> contractList = contractService.fetchAll();
         model.addAttribute("contracts", contractList);
         return "home/contracts";
+    }
+
+    @GetMapping("/viewContract/{contract_id}")
+    public String viewContract(@PathVariable("contract_id") int contract_id, Model model){
+        model.addAttribute("contractComplete", contractService.findContractCompleteInfoById(contract_id));
+        return "home/viewContract";
     }
 
     @GetMapping("/add_contract")
