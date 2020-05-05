@@ -11,17 +11,21 @@
         <label>Car ID: </label>
         <input type="text" name="car_id" th:value="${car.car_id}" readonly><br />
         <label>Enter Brand ID: </label>
-        <input type="text" name="brandModel_id" th:value="${car.brandModel_id}"><br />
-        <label>Enter Registration Number (XXXXXXX - 7 chars): </label>
-        <input type="text" name="reg_num" th:value="${car.reg_num}"><br />
-        <label>Enter Registration Date (YYYY-MM-DD): </label>
-        <input type="text" name="reg_date" th:value="${car.reg_date}"><br />
-        <label>Enter Mileage: </label>
-        <input type="text" name="mileage" th:value="${car.mileage}"><br />
-        <label>Enter Car Type</label>
-        <input type="text" name="carType_id" th:value="${car.carType_id}"><br />
+        <input type="text" name="brandModel_id" th:value="${car.brandModel_id}" required pattern="^[1-9][0-9]*"><br />
+        <label>Enter Registration Number (7 Chars): </label>
+        <input type="text" name="reg_num" th:value="${car.reg_num}" required pattern="\D\D\d\d\d\d\d"><br />
+        <label>Enter Registration Date: </label>
+        <input type="date" name="reg_date" th:value="${car.reg_date}" required max="2020-05-05"><br />
+        <label>Enter Mileage (even 0): </label>
+        <input type="text" name="mileage" th:value="${car.mileage}" required pattern="\d*"><br />
+        <label>Enter Car Type: </label>
+        <input type="text" name="carType_id" th:value="${car.carType_id}" required pattern="^[1-9][0-9]*"><br />
         <br />
         <input type="submit" value="Save changes">
     </form>
+    <br />
+    <a href="/carMenu">
+        <button class="btn_cancel">Cancel</button>
+    </a>
 </body>
 </html>
