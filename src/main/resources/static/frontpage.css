@@ -1,5 +1,37 @@
 body{
-    background: aliceblue;
+   background-image: url("car.jpeg");
+    background-color: darkgrey;
+    background-size: cover;
+}
+.bttn{
+    text-align: center;
+}
+.bttn{
+    transition-duration: 0.5s;
+}
+.bttn:hover{
+    background-color: blueviolet;
+    color: white;
+}
+.bttn1{
+    text-align: center;
+}
+.bttn1{
+    transition-duration: 0.4s;
+}
+.bttn1:hover{
+    background-color: greenyellow;
+    color: white;
+}
+.bttn2{
+    text-align: center;
+}
+.bttn2{
+    transition-duration: 0.4s;
+}
+.bttn2:hover{
+    background-color: orangered;
+    color: white;
 }
 table{
     border-collapse: collapse;
@@ -10,7 +42,7 @@ table.center{
     margin-left: auto;
 }
 h1{
-    text-align: left;
+    text-align: center;
 }
 th{
     background-color: lightblue;

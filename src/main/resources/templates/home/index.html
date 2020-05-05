@@ -3,17 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <title>Kailua Car Rental</title>
-    <link rel="stylesheet" type="text/css" href="customers.css">
+    <link rel="stylesheet" type="text/css" href="frontpage.css">
 </head>
 <body>
 <h1>Welcome to Kailua Car Rental</h1>
-    <div>
+    <div class="bttn">
         <a href="/customers">
             <button class="btn-customers" id="btn-customers">Customers</button>
         </a>
+    </div>
+<br/>
+<br/>
+    <div class="bttn1">
         <a th:href="${'/carMenu'}">
             <button id="btn_cars">Go to Car Menu</button>
         </a>
+    </div>
+<br/>
+<br/>
+    <div class="bttn2">
         <a href="/contracts">
             <button class="btn-contracts" id="btn-contracts">Contracts</button>
         </a>
