@@ -9,16 +9,27 @@
 <h1>Update Contract</h1>
 
 <form action="/updateContract" method="post">
-    <input type="text" name="renter_id" th:value="${contract.renter_id}"  placeholder="Renter ID" required>
-    <input type="text" name="car_id" th:value="${contract.car_id}"  placeholder="Car ID" required>
-    <input type="date" name="start_date" th:value="${contract.start_date}"  placeholder="Start Date" required>
-    <input type="date" name="end_date" th:value="${contract.end_date}"  placeholder="End Date" required>
-    <input type="number" name="max_km" th:value="${contract.max_km}"  placeholder="Max km" required>
-    <input type="number" name="start_km" th:value="${contract.start_km}" placeholder="Start km" required>
+    <label>Contract ID: </label>
+    <input type="text" name="contract_id" th:value="${contract.contract_id}" readonly><br />
+    <label>Renter ID: </label>
+    <input type="text" name="renter_id" th:value="${contract.renter_id}"  placeholder="Renter ID" required pattern="^[1-9][0-9]*"><br />
+    <label>Car ID: </label>
+    <input type="text" name="car_id" th:value="${contract.car_id}"  placeholder="Car ID" required pattern="^[1-9][0-9]*"><br />
+    <label>Start Date: </label>
+    <input type="date" name="start_date" th:value="${contract.start_date}"  placeholder="Start Date" required min="2020-05-05"><br />
+    <label>End Date: </label>
+    <input type="date" name="end_date" th:value="${contract.end_date}"  placeholder="End Date" required min="2020-05-05"><br />
+    <label>Max km: </label>
+    <input type="text" name="max_km" th:value="${contract.max_km}"  placeholder="Max km" required pattern="\d*"><br />
+    <label>Start km: </label>
+    <input type="text" name="start_km" th:value="${contract.start_km}" placeholder="Start km" required pattern="\d*"><br />
 
     <br>
     <input type="submit" style="background-color: aquamarine" value="Save Changes">
-    <a href="/contracts" style="background-color: aliceblue">Revert<a/>
 </form>
+<br />
+<a href="/contracts">
+    <button class="btn_cancel">Cancel</button>
+</a>
 </body>
 </html>

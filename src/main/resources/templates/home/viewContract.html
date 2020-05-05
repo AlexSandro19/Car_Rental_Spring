@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Contract Detailed Information</h1>
+<span>Contract ID: </span><span th:text="${contractComplete.contract_id}"/><br />
+<span>Customer First Name: </span><span th:text="${contractComplete.first_name}"/><br />
+<span>Customer First Name: </span><span th:text="${contractComplete.last_name}"/><br />
+<span>Customer Driver License: </span><span th:text="${contractComplete.driver_license}"/><br />
+<span>Car Registration Number: </span><span th:text="${contractComplete.reg_num}"/><br />
+<span>Contract Start Date: </span><span th:text="${contractComplete.start_date}"/><br />
+<span>Contract End Date: </span><span th:text="${contractComplete.end_date}"/><br />
+<span>Max Km: </span><span th:text="${contractComplete.max_km}"/><br />
+<span>Start Km: </span><span th:text="${contractComplete.start_km}"/><br />
+
+<br />
+<a href="/contracts">
+    <button class="btn_back">Go Back</button>
+</a>
+</body>
+</html>

@@ -9,34 +9,34 @@
 <h1>Update Customer</h1>
 
 <form action="/updateCustomer" method="post">
-    <label> Customer ID</label>
+    <label> Customer ID: </label>
     <input type="text" name="customer_id" th:value="${customer.customer_id}"  placeholder="Customer ID" readonly>
     <br>
-    <label>First Name</label>
+    <label>First Name: </label>
     <input type="text" name="first_name" th:value="${customer.first_name}"  placeholder="First Name" required pattern="\D*">
     <br>
-    <label>Last Name</label>
+    <label>Last Name: </label>
     <input type="text" name="last_name" th:value="${customer.last_name}"  placeholder="Last Name" required pattern="\D*">
     <br>
-    <label>Address</label>
+    <label>Address: </label>
     <input type="text" name="st_address" th:value="${customer.st_address}"  placeholder="St Address">
     <br>
-    <label>Zip Code</label>
+    <label>Zip Code: </label>
     <input type="text" name="zip" th:value="${customer.zip}"  placeholder="Zip Code (4 Digits)" required minlength="4" pattern="\d*" maxlength="4">
     <br>
-    <label>Phone</label>
+    <label>Phone: </label>
     <input type="text" name="mobile_phone" th:value="${customer.mobile_phone}"  placeholder="Mobile Phone (8 Digits)" required pattern="\d*" minlength="8" maxlength="8">
     <br>
-    <label>Additional Phone</label>
+    <label>Additional Phone: </label>
     <input type="text" name="addit_phone" th:value="${customer.addit_phone}" placeholder="Additional Phone" >
     <br>
-    <label>Email</label>
+    <label>Email: </label>
     <input type="email" name="email" th:value="${customer.email}" placeholder="Email" required >
     <br>
-    <label>License Number</label>
+    <label>License Number: </label>
     <input type="text" name="driver_license" th:value="${customer.driver_license}" placeholder="License Number (8 Digits)" required pattern="\d*" minlength="8" maxlength="8">
     <br>
-    <label>Driver Since Date</label>
+    <label>Driver Since Date: </label>
     <input type="date" name="driver_since" th:value="${customer.driver_since}" placeholder="Driver Since" required max="2020-05-05">
     <br>
     <br />
