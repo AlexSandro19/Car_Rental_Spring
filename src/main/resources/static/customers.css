@@ -77,3 +77,6 @@ tr:nth-child(even){
 a{
     text-decoration: none;
 }
+input{
+    margin 7px;
+}

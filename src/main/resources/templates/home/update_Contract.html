@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Update Contract</title>
-    <link rel="stylesheet" type="text/css" href="customers.css">
+    <link rel="stylesheet" type="text/css" href="/customers.css">
 </head>
 <body>
 <h1>Update Contract</h1>
@@ -11,6 +11,7 @@
 <form action="/updateContract" method="post">
     <label>Contract ID: </label>
     <input type="text" name="contract_id" th:value="${contract.contract_id}" readonly><br />
+
     <label>Renter ID: </label>
     <input type="text" name="renter_id" th:value="${contract.renter_id}"  placeholder="Renter ID" required pattern="^[1-9][0-9]*"><br />
     <label>Car ID: </label>
