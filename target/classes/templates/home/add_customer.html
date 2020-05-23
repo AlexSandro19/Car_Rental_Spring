@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Add new customer</title>
+    <link rel="stylesheet" type="text/css" href="customers.css">
+</head>
+<body>
+    <h1>Add New Customer</h1>
+
+    <form action="/add_customer" method="post">
+            <div>
+        <label>Enter First Name</label><br>
+        <input type="text" name="first_name" required pattern="\D*">
+            </div>
+             <div>
+        <label>Enter Last Name</label><br>
+        <input type="text" name="last_name" required pattern="\D*">
+            </div>
+             <div>
+        <label>Enter Street Address</label><br>
+        <input type="text" name="st_address" required >
+            </div>
+             <div>
+        <label>Enter ZIP Code (4 Digits) </label><br>
+        <input type="text" name="zip" required pattern="\d*" minlength="4" maxlength="4">
+            </div>
+             <div>
+        <label>Enter Mobile Phone (8 Digits)</label><br>
+        <input type="text" name="mobile_phone" required pattern="\d*" minlength="8" maxlength="8">
+             </div>
+            <div>
+        <label>Enter Additional Phone(Optional)</label><br>
+        <input type="text" name="addit_phone" >
+             </div>
+              <div>
+        <label>Enter Email</label><br>
+        <input type="email" name="email" required >
+              </div>
+                <div>
+        <label>Enter Driver License Number (8 Digits)</label><br>
+        <input type="text" name="driver_license" required pattern="\d*" minlength="8" maxlength="8">
+              </div>
+               <div>
+        <label>Enter Driver Since Date</label><br>
+        <input type="date" name="driver_since" required max="2020-05-05">
+              </div>
+        <br>
+                <div>
+        <input style="background-color: azure" type="submit" value="Add Customer">
+               </div>
+    </form>
+    <br />
+    <a href="/customers">
+        <button class="btn_cancel">Cancel</button>
+    </a>
+</body>
+
+
+</body>
+</html>

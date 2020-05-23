@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <link rel="stylesheet" type="text/css" href="customers.css">
+    <meta charset="UTF-8">
+    <title>Car Menu</title>
+    <link rel="stylesheet" type="text/css" href="/customers.css">
+</head>
+<body>
+    <h1>Cars Menu</h1>
+    <table>
+        <thead>
+            <th>Id</th>
+            <th>Brand Id</th>
+            <th>Registration Number</th>
+            <th>Registration Date</th>
+            <th>Mileage</th>
+            <th>Car Type</th>
+            <th style="text-align: center">Buttons</th>
+        </thead>
+        <tbody>
+            <tr th:each="car: ${cars}">
+                <td th:text="${car.car_id}"/>
+                <td th:text="${car.brandModel_id}"/>
+                <td th:text="${car.reg_num}"/>
+                <td th:text="${car.reg_date}"/>
+                <td th:text="${car.mileage}"/>
+                <td th:text="${car.carType_id}"/>
+                <td>
+                    <a th:href="@{'/viewCar/' + ${car.car_id}}">
+                        <button id="btn_viewCar">View Info</button>
+                    </a>
+                    <a th:href="@{'/deleteCar/' + ${car.car_id}}">
+                        <button id="btn_deleteCar">Delete</button>
+                    </a>
+                    <a th:href="@{'/updateCar/' + ${car.car_id}}">
+                        <button id="btn_updateCar">Update</button>
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <br/>
+    <a href="/createCar">
+        <button id="btn-create" class="btn-create">Add Car</button>
+    </a>
+    <br />
+    <br/>
+    <a href="/">
+        <button class="btn_back">Go Back</button>
+    </a>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="customers.css">
+</head>
+<body>
+    <h1>Car Detailed Information</h1>
+    <span>ID: </span><span th:text="${carComplete.car_id}"/><br />
+    <span>Brand: </span><span th:text="${carComplete.brand}"/><br />
+    <span>Model: </span><span th:text="${carComplete.model}"/><br />
+    <span>Registration Number: </span><span th:text="${carComplete.reg_num}"/><br />
+    <span>Registration Date: </span><span th:text="${carComplete.reg_date}"/><br />
+    <span>Mileage: </span><span th:text="${carComplete.mileage}"/><br />
+    <span>Car Type: </span><span th:text="${carComplete.car_type}"/><br />
+    <span>Transmission Type: </span><span th:text="${carComplete.transmission}"/><br />
+    <span>Air Conditioner: </span><span th:text="${carComplete.air_con}"/><br />
+    <span>Engine Volume: </span><span th:text="${carComplete.eng_volume}"/><br />
+    <span>Horsepower: </span><span th:text="${carComplete.hp}"/><br />
+    <span>Seats: </span><span th:text="${carComplete.seats}"/><br />
+
+    <br />
+    <a href="/carMenu">
+        <button class="btn_back">Go Back</button>
+    </a>
+</body>
+</html>

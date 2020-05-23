@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="customers.css">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Add new Car</h1>
+   <form action="/createCar" method="post">
+       <label>Enter Brand ID: </label>
+       <input type="text" name="brandModel_id" required pattern="^[1-9][0-9]*"><br />
+       <label>Enter Registration Number (7 Chars): </label>
+       <input type="text" name="reg_num" required pattern="\D\D\d\d\d\d\d"><br />
+       <label>Enter Registration Date: </label>
+       <input type="date" name="reg_date" required max="2020-05-05"><br />
+       <label>Enter Mileage (even 0): </label>
+       <input type="text" name="mileage" required pattern="\d*"><br />
+       <label>Enter Car Type</label>
+       <input type="text" name="carType_id" required pattern="^[1-9][0-9]*"><br />
+
+       <input type="submit" value="Add new Car">
+
+   </form>
+    <br />
+    <a href="/carMenu">
+        <button class="btn_cancel">Cancel</button>
+    </a>
+</body>
+</html>
